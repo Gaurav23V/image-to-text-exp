@@ -100,6 +100,9 @@ def load_config(config_path: str | Path) -> AppConfig:
     path = Path(config_path)
     raw = yaml.safe_load(path.read_text())
     config = AppConfig.model_validate(raw)
-    config.run.prompts_path = (path.parent / config.run.prompts_path).resolve() if not Path(config.run.prompts_path).is_absolute() else Path(config.run.prompts_path)
-    config.run.output_root = (path.parent / config.run.output_root).resolve() if not Path(config.run.output_root).is_absolute() else Path(config.run.output_root)
+    workspace_root = Path.cwd()
+    prompts_path = Path(config.run.prompts_path)
+    output_root = Path(config.run.output_root)
+    config.run.prompts_path = prompts_path if prompts_path.is_absolute() else (workspace_root / prompts_path).resolve()
+    config.run.output_root = output_root if output_root.is_absolute() else (workspace_root / output_root).resolve()
     return config
