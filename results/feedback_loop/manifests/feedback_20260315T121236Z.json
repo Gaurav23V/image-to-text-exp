@@ -1,0 +1,71 @@
+{
+  "run_id": "feedback_20260315T121236Z",
+  "phase": "feedback",
+  "config": {
+    "run": {
+      "name": "phase2_feedback",
+      "output_root": "/home/g/workspace/gaurav23v/image-to-text-exp/results/feedback_loop",
+      "prompts_path": "/home/g/workspace/gaurav23v/image-to-text-exp/prompts/benchmark_prompts.json",
+      "prompt_limit": 6,
+      "prompt_categories": [],
+      "seeds": [
+        101
+      ],
+      "images_per_prompt": 1,
+      "width": 768,
+      "height": 768,
+      "inference_steps": 4,
+      "guidance_scale": 0.0,
+      "scheduler": "EulerAncestralDiscreteScheduler",
+      "device": "cuda",
+      "precision": "float16",
+      "smoke_mode": false,
+      "allow_mock_fallback": false
+    },
+    "models": [
+      "sd_turbo"
+    ],
+    "metrics": {
+      "enable_clip_score": true,
+      "enable_sharpness": false,
+      "enable_fid": false
+    },
+    "reporting": {
+      "build_plots": true,
+      "build_grids": true
+    },
+    "feedback": {
+      "mode": "live",
+      "gemini_model": "gemini-2.5-flash",
+      "iterations": 1,
+      "critique_template": "You are helping refine a text-to-image prompt.\nOriginal prompt: {prompt}\nCritique the image for missing attributes, alignment errors, composition issues, and style mismatches.\nReturn strict JSON with keys:\nalignment_issues, missing_details, style_issues, corrected_prompt, confidence, notes.\n"
+    },
+    "super_resolution": {
+      "backend": "realesrgan",
+      "fallback_backend": "pil",
+      "model_name": "realesr-general-x4v3",
+      "scale": 4,
+      "tile": 0
+    }
+  },
+  "environment": {
+    "python_version": "3.12.13 (main, Mar  3 2026, 14:59:34) [Clang 21.1.4 ]",
+    "platform": "Linux-6.19.6-200.fc43.x86_64-x86_64-with-glibc2.42",
+    "system": "Linux",
+    "machine": "x86_64",
+    "git_commit": "45ad39b836e8733b744b04fbf6170b1017f1e2d2",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "package_versions": {
+      "torch": "2.10.0+cu128",
+      "diffusers": "0.37.0",
+      "transformers": "5.3.0",
+      "accelerate": "1.13.0",
+      "pydantic": "2.12.5",
+      "pandas": "3.0.1",
+      "matplotlib": "3.10.8",
+      "realesrgan": "not-installed",
+      "basicsr": "not-installed"
+    }
+  }
+}

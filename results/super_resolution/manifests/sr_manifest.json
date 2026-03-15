@@ -3,26 +3,26 @@
   "config": {
     "run": {
       "name": "phase3_super_resolution",
-      "output_root": "/workspace/results/super_resolution",
-      "prompts_path": "/workspace/prompts/benchmark_prompts.json",
-      "prompt_limit": 4,
+      "output_root": "/home/g/workspace/gaurav23v/image-to-text-exp/results/super_resolution",
+      "prompts_path": "/home/g/workspace/gaurav23v/image-to-text-exp/prompts/benchmark_prompts.json",
+      "prompt_limit": 6,
       "prompt_categories": [],
       "seeds": [
         101
       ],
       "images_per_prompt": 1,
-      "width": 384,
-      "height": 384,
+      "width": 768,
+      "height": 768,
       "inference_steps": 4,
       "guidance_scale": 0.0,
       "scheduler": "EulerAncestralDiscreteScheduler",
-      "device": "auto",
-      "precision": "auto",
+      "device": "cuda",
+      "precision": "float16",
       "smoke_mode": false,
       "allow_mock_fallback": false
     },
     "models": [
-      "tiny_sd"
+      "sd_turbo"
     ],
     "metrics": {
       "enable_clip_score": true,
@@ -48,13 +48,13 @@
     }
   },
   "environment": {
-    "python_version": "3.12.3 (main, Jan 22 2026, 20:57:42) [GCC 13.3.0]",
-    "platform": "Linux-6.12.58+-x86_64-with-glibc2.39",
+    "python_version": "3.12.13 (main, Mar  3 2026, 14:59:34) [Clang 21.1.4 ]",
+    "platform": "Linux-6.19.6-200.fc43.x86_64-x86_64-with-glibc2.42",
     "system": "Linux",
     "machine": "x86_64",
-    "git_commit": "69393da25dc6e6c562ad4f647c0408627113f5f8",
-    "cuda_available": false,
-    "gpu_name": null,
+    "git_commit": "45ad39b836e8733b744b04fbf6170b1017f1e2d2",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
     "package_versions": {
       "torch": "2.10.0+cu128",
       "diffusers": "0.37.0",

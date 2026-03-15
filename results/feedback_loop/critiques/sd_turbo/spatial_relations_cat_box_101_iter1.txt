@@ -1,0 +1,20 @@
+```json
+{
+  "alignment_issues": [
+    "The prompt specifies 'A striped orange cat' (singular), but the image contains two distinct cat heads. One is in the box, and another is floating unnaturally within a houseplant.",
+    "The upper cat head is depicted floating *inside* a large houseplant, which is a severe anatomical and alignment error. The prompt states the cat should be 'next to a green houseplant', not integrated into it.",
+    "The environment does not align with 'cozy living room'. The background is sparse, mostly a plain wall and a window, with multiple cardboard boxes suggesting a moving or storage scenario rather than a settled, cozy living space."
+  ],
+  "missing_details": [
+    "The 'cozy living room' atmosphere is entirely missing. There are no elements like furniture, decor, or warm lighting that would convey coziness.",
+    "The full body of the cat sitting in the box is not clearly visible; only its head and upper chest are shown.",
+    "The prompt implies a single, complete cat, not just disembodied heads or multiple cats."
+  ],
+  "style_issues": [
+    "The image's depiction of a floating cat head within a plant introduces a surreal or even unsettling element that clashes with the implied realistic and 'cozy' style of the prompt."
+  ],
+  "corrected_prompt": "A single, realistic striped orange cat, its full body visible, sitting comfortably inside an open cardboard box. The box is placed on a wooden floor next to a lush green houseplant. The scene is viewed from eye level in a warm and inviting living room, featuring soft lighting, a comfortable sofa, and decorative elements in the background.",
+  "confidence": "high",
+  "notes": "The most significant issues are the presence of two cats instead of one, the surreal floating cat head, and the complete lack of a 'cozy living room' environment. The prompt needs to be more specific about the cat's visibility and the desired room details to avoid these misinterpretations."
+}
+```
