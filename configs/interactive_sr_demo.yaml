@@ -1,0 +1,38 @@
+run:
+  name: interactive_sr_demo
+  output_root: results/interactive_demo/sr
+  prompts_path: prompts/smoke_prompts.json
+  prompt_limit: 1
+  prompt_categories: []
+  seeds: [101]
+  images_per_prompt: 1
+  width: 256
+  height: 256
+  inference_steps: 2
+  guidance_scale: 0.0
+  scheduler: DDIMScheduler
+  device: cpu
+  precision: float32
+  smoke_mode: true
+  allow_mock_fallback: false
+models:
+  - tiny_sd
+metrics:
+  enable_clip_score: true
+  enable_sharpness: true
+  enable_fid: false
+reporting:
+  build_plots: false
+  build_grids: false
+feedback:
+  mode: mock
+  gemini_model: gemini-2.5-flash
+  iterations: 1
+  critique_template: |
+    Return strict JSON.
+super_resolution:
+  backend: pil
+  fallback_backend: pil
+  model_name: realesr-general-x4v3
+  scale: 2
+  tile: 0
