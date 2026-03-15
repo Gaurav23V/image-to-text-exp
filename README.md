@@ -17,23 +17,23 @@ top-level commands.
 ## Quick start
 
 ```bash
-make setup
-make test
-make smoke
-make phase1
-make phase2
-make phase3
-make report
+uv sync --extra dev --extra sr
+uv run python -m pytest
+uv run python -m src.cli smoke --config configs/smoke.yaml
+uv run python -m src.cli phase1 --config configs/phase1.yaml
+uv run python -m src.cli phase2 --config configs/phase2.yaml
+uv run python -m src.cli phase3 --config configs/phase3.yaml
+uv run python -m src.cli report --config configs/phase1.yaml
 ```
 
-Python CLI equivalents:
+CLI commands:
 
 ```bash
-python -m src.cli phase1 --config configs/phase1.yaml
-python -m src.cli phase2 --config configs/phase2.yaml
-python -m src.cli phase3 --config configs/phase3.yaml
-python -m src.cli smoke --config configs/smoke.yaml
-python -m src.cli report --config configs/phase1.yaml
+uv run python -m src.cli phase1 --config configs/phase1.yaml
+uv run python -m src.cli phase2 --config configs/phase2.yaml
+uv run python -m src.cli phase3 --config configs/phase3.yaml
+uv run python -m src.cli smoke --config configs/smoke.yaml
+uv run python -m src.cli report --config configs/phase1.yaml
 ```
 
 ## Interactive demo frontend
@@ -53,7 +53,7 @@ Features:
 Start the frontend:
 
 ```bash
-python -m streamlit run src/frontend/app.py
+uv run python -m streamlit run src/frontend/app.py
 ```
 
 The default sidebar config paths point to `configs/phase2.yaml` and
@@ -65,9 +65,9 @@ The default sidebar config paths point to `configs/phase2.yaml` and
 Interactive CLI equivalents:
 
 ```bash
-python -m src.cli feedback-once --prompt "A watercolor fox reading a book in a library"
-python -m src.cli sr-once --prompt "A watercolor fox reading a book in a library"
-python -m src.cli ui
+uv run python -m src.cli feedback-once --prompt "A watercolor fox reading a book in a library"
+uv run python -m src.cli sr-once --prompt "A watercolor fox reading a book in a library"
+uv run python -m src.cli ui
 ```
 
 ## Environment

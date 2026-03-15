@@ -8,13 +8,7 @@ track runtime and image-quality deltas.
 ## Command
 
 ```bash
-make phase3
-```
-
-Equivalent:
-
-```bash
-python -m src.cli phase3 --config configs/phase3.yaml
+uv run python -m src.cli phase3 --config configs/phase3.yaml
 ```
 
 ## How it chooses inputs

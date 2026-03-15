@@ -14,10 +14,10 @@
 ## Commands
 
 ```bash
-make phase1
-make phase2
-make phase3
-make report
+uv run python -m src.cli phase1 --config configs/phase1.yaml
+uv run python -m src.cli phase2 --config configs/phase2.yaml
+uv run python -m src.cli phase3 --config configs/phase3.yaml
+uv run python -m src.cli report --config configs/phase1.yaml
 ```
 
 ## Deterministic inputs

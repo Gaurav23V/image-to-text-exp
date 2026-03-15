@@ -11,12 +11,12 @@
 ## Install
 
 ```bash
-make setup
+uv sync --extra dev --extra sr
 cp .env.example .env
 ```
 
-`make setup` installs the validated pinned dependency set from
-`requirements.lock`, then installs the repository in editable mode.
+`uv sync --extra dev --extra sr` installs the project, development
+dependencies, and super-resolution extras directly from `pyproject.toml`.
 
 Then populate only the credentials you need:
 
@@ -26,7 +26,7 @@ Then populate only the credentials you need:
 ## First run
 
 ```bash
-make smoke
+uv run python -m src.cli smoke --config configs/smoke.yaml
 ```
 
 Expected output roots:
