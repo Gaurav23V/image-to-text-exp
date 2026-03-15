@@ -1,0 +1,43 @@
+run:
+  name: phase2_feedback
+  output_root: results/feedback_loop
+  prompts_path: prompts/benchmark_prompts.json
+  prompt_limit: 6
+  prompt_categories: []
+  seeds: [101]
+  images_per_prompt: 1
+  width: 384
+  height: 384
+  inference_steps: 4
+  guidance_scale: 0.0
+  scheduler: EulerAncestralDiscreteScheduler
+  device: auto
+  precision: auto
+  smoke_mode: false
+  allow_mock_fallback: false
+models:
+  - tiny_sd
+  - sd_turbo
+metrics:
+  enable_clip_score: true
+  enable_sharpness: false
+  enable_fid: false
+reporting:
+  build_plots: true
+  build_grids: true
+feedback:
+  mode: live
+  gemini_model: gemini-2.5-flash
+  iterations: 1
+  critique_template: |
+    You are helping refine a text-to-image prompt.
+    Original prompt: {prompt}
+    Critique the image for missing attributes, alignment errors, composition issues, and style mismatches.
+    Return strict JSON with keys:
+    alignment_issues, missing_details, style_issues, corrected_prompt, confidence, notes.
+super_resolution:
+  backend: realesrgan
+  fallback_backend: pil
+  model_name: realesr-general-x4v3
+  scale: 4
+  tile: 0

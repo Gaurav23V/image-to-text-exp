@@ -1,0 +1,16 @@
+[
+  {
+    "id": "smoke_robot_tea",
+    "category": "artistic style",
+    "prompt": "A tiny robot serving tea in a sunlit kitchen, whimsical illustration.",
+    "notes": "Fast smoke prompt.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "smoke_city_bike",
+    "category": "scene composition",
+    "prompt": "A cyclist crossing a rainy city street at dusk, cinematic lighting.",
+    "notes": "Fast smoke prompt.",
+    "difficulty": "easy"
+  }
+]

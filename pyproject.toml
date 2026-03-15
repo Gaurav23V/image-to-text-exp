@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-t2i-benchmark"
+version = "0.1.0"
+description = "Reproducible benchmarking and refinement for open-source text-to-image models."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Cursor Cloud Agent" }]
+dependencies = [
+  "accelerate",
+  "diffusers",
+  "huggingface-hub",
+  "matplotlib",
+  "numpy",
+  "opencv-python-headless",
+  "pandas",
+  "pillow",
+  "psutil",
+  "pydantic>=2",
+  "python-dotenv",
+  "pyyaml",
+  "requests",
+  "safetensors",
+  "torch",
+  "tqdm",
+  "transformers",
+  "typer",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-mock",
+]
+sr = [
+  "basicsr",
+  "realesrgan",
+]
+
+[project.scripts]
+t2i-bench = "src.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "single_object_red_chair",
+    "category": "single object",
+    "prompt": "A studio product photo of a bright red modern chair on a seamless white background, soft shadows, centered composition.",
+    "notes": "Clean object isolation and material rendering.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "multi_object_breakfast_table",
+    "category": "multi-object",
+    "prompt": "A wooden breakfast table with a blue ceramic mug, a croissant on a white plate, a folded newspaper, and a vase with yellow flowers, morning sunlight.",
+    "notes": "Checks object co-occurrence and clutter handling.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "scene_composition_city_rain",
+    "category": "scene composition",
+    "prompt": "A rainy neon-lit city street at night with pedestrians under umbrellas, reflections on wet pavement, cinematic wide shot.",
+    "notes": "Tests composition depth and lighting consistency.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "human_portrait_editorial",
+    "category": "human portrait",
+    "prompt": "An editorial portrait of a young woman wearing a tailored navy blazer, natural skin texture, soft window light, shallow depth of field.",
+    "notes": "Portrait realism and fabric details.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "spatial_relations_cat_box",
+    "category": "spatial relations",
+    "prompt": "A striped orange cat sitting inside an open cardboard box next to a green houseplant, viewed from eye level in a cozy living room.",
+    "notes": "Tests inside-versus-next-to relations.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "counting_three_balloons",
+    "category": "counting",
+    "prompt": "Three helium balloons floating above a birthday cake on a table, one red, one blue, and one gold, festive indoor lighting.",
+    "notes": "Counting and color assignment.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "artistic_style_ukiyoe_robot",
+    "category": "artistic style",
+    "prompt": "A friendly service robot serving tea in the style of a traditional ukiyo-e woodblock print, bold outlines, flat colors, textured paper.",
+    "notes": "Style transfer fidelity.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "photorealism_mountain_lake",
+    "category": "photorealism",
+    "prompt": "A photorealistic mountain lake at sunrise with mist over the water, pine trees reflected in the surface, ultra-detailed landscape photography.",
+    "notes": "Natural texture realism.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "text_rendering_poster",
+    "category": "text rendering",
+    "prompt": "A clean event poster for a jazz night that prominently includes the readable text 'MIDNIGHT JAZZ' in large gold letters, art deco style.",
+    "notes": "Open-source models often struggle with typography.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fine_grained_attributes_car",
+    "category": "fine-grained attributes",
+    "prompt": "A compact electric car with matte teal paint, black roof rails, bronze wheels, and a panoramic glass roof parked on a quiet street.",
+    "notes": "Attribute binding across multiple properties.",
+    "difficulty": "hard"
+  }
+]
