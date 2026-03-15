@@ -1,0 +1,70 @@
+{
+  "phase": "super_resolution",
+  "config": {
+    "run": {
+      "name": "phase3_super_resolution",
+      "output_root": "/workspace/results/super_resolution",
+      "prompts_path": "/workspace/prompts/benchmark_prompts.json",
+      "prompt_limit": 4,
+      "prompt_categories": [],
+      "seeds": [
+        101
+      ],
+      "images_per_prompt": 1,
+      "width": 384,
+      "height": 384,
+      "inference_steps": 4,
+      "guidance_scale": 0.0,
+      "scheduler": "EulerAncestralDiscreteScheduler",
+      "device": "auto",
+      "precision": "auto",
+      "smoke_mode": false,
+      "allow_mock_fallback": false
+    },
+    "models": [
+      "tiny_sd"
+    ],
+    "metrics": {
+      "enable_clip_score": true,
+      "enable_sharpness": true,
+      "enable_fid": false
+    },
+    "reporting": {
+      "build_plots": true,
+      "build_grids": true
+    },
+    "feedback": {
+      "mode": "mock",
+      "gemini_model": "gemini-2.5-flash",
+      "iterations": 1,
+      "critique_template": "Return strict JSON.\n"
+    },
+    "super_resolution": {
+      "backend": "realesrgan",
+      "fallback_backend": "pil",
+      "model_name": "realesr-general-x4v3",
+      "scale": 4,
+      "tile": 0
+    }
+  },
+  "environment": {
+    "python_version": "3.12.3 (main, Jan 22 2026, 20:57:42) [GCC 13.3.0]",
+    "platform": "Linux-6.12.58+-x86_64-with-glibc2.39",
+    "system": "Linux",
+    "machine": "x86_64",
+    "git_commit": "69393da25dc6e6c562ad4f647c0408627113f5f8",
+    "cuda_available": false,
+    "gpu_name": null,
+    "package_versions": {
+      "torch": "2.10.0+cu128",
+      "diffusers": "0.37.0",
+      "transformers": "5.3.0",
+      "accelerate": "1.13.0",
+      "pydantic": "2.12.5",
+      "pandas": "3.0.1",
+      "matplotlib": "3.10.8",
+      "realesrgan": "not-installed",
+      "basicsr": "not-installed"
+    }
+  }
+}

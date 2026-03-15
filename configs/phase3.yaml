@@ -1,0 +1,38 @@
+run:
+  name: phase3_super_resolution
+  output_root: results/super_resolution
+  prompts_path: prompts/benchmark_prompts.json
+  prompt_limit: 4
+  prompt_categories: []
+  seeds: [101]
+  images_per_prompt: 1
+  width: 384
+  height: 384
+  inference_steps: 4
+  guidance_scale: 0.0
+  scheduler: EulerAncestralDiscreteScheduler
+  device: auto
+  precision: auto
+  smoke_mode: false
+  allow_mock_fallback: false
+models:
+  - tiny_sd
+metrics:
+  enable_clip_score: true
+  enable_sharpness: true
+  enable_fid: false
+reporting:
+  build_plots: true
+  build_grids: true
+feedback:
+  mode: mock
+  gemini_model: gemini-2.5-flash
+  iterations: 1
+  critique_template: |
+    Return strict JSON.
+super_resolution:
+  backend: realesrgan
+  fallback_backend: pil
+  model_name: realesr-general-x4v3
+  scale: 4
+  tile: 0

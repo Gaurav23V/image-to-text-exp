@@ -1,0 +1,34 @@
+# Project structure
+
+- `configs/`
+  - `phase1.yaml` baseline benchmark
+  - `phase2.yaml` Gemini refinement
+  - `phase3.yaml` super-resolution
+  - `smoke.yaml` constrained end-to-end smoke run
+- `prompts/`
+  - benchmark prompt suite
+  - smoke prompt suite
+- `src/config/`
+  - typed config models and loader
+- `src/models/`
+  - model registry and text-to-image adapters
+- `src/pipelines/`
+  - baseline, feedback loop, and SR runners
+- `src/metrics/`
+  - CLIP score and sharpness metrics
+- `src/feedback/`
+  - Gemini client and parser
+- `src/sr/`
+  - Real-ESRGAN-first and PIL fallback upscalers
+- `src/io/`
+  - prompt loading and artifact writing
+- `src/reporting/`
+  - markdown summaries and plots
+- `src/utils/`
+  - shared schemas, logging, and environment metadata
+- `tests/`
+  - unit and integration coverage
+- `docs/`
+  - practical docs and findings logs
+- `results/`
+  - generated outputs and reports

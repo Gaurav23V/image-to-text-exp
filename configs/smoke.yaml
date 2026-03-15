@@ -1,0 +1,41 @@
+run:
+  name: smoke_all_phases
+  output_root: results/smoke
+  prompts_path: prompts/smoke_prompts.json
+  prompt_limit: 2
+  prompt_categories: []
+  seeds: [7]
+  images_per_prompt: 1
+  width: 256
+  height: 256
+  inference_steps: 2
+  guidance_scale: 0.0
+  scheduler: DDIMScheduler
+  device: auto
+  precision: auto
+  smoke_mode: true
+  allow_mock_fallback: true
+models:
+  - tiny_sd
+metrics:
+  enable_clip_score: true
+  enable_sharpness: true
+  enable_fid: false
+reporting:
+  build_plots: true
+  build_grids: true
+feedback:
+  mode: mock
+  gemini_model: gemini-2.5-flash
+  iterations: 1
+  critique_template: |
+    You are helping refine a text-to-image prompt.
+    Original prompt: {prompt}
+    Return strict JSON with keys:
+    alignment_issues, missing_details, style_issues, corrected_prompt, confidence, notes.
+super_resolution:
+  backend: pil
+  fallback_backend: pil
+  model_name: realesr-general-x4v3
+  scale: 2
+  tile: 0
