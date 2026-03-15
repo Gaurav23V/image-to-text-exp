@@ -8,7 +8,8 @@ CONFIG_SMOKE ?= configs/smoke.yaml
 
 setup:
 	$(PYTHON) -m pip install --upgrade pip
-	$(PYTHON) -m pip install -e ".[dev,sr]"
+	$(PYTHON) -m pip install -r requirements.lock
+	$(PYTHON) -m pip install -e . --no-deps
 
 test:
 	$(PYTHON) -m pytest

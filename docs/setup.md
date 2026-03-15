@@ -15,6 +15,9 @@ make setup
 cp .env.example .env
 ```
 
+`make setup` installs the validated pinned dependency set from
+`requirements.lock`, then installs the repository in editable mode.
+
 Then populate only the credentials you need:
 
 - `GEMINI_API_KEY` for live Gemini refinement
