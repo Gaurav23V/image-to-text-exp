@@ -19,13 +19,28 @@ class GeminiError(RuntimeError):
 
 
 def _extract_json_block(text: str) -> dict[str, Any]:
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        cleaned = re.sub(r"^```[a-zA-Z0-9]*\n?", "", cleaned)
+        cleaned = re.sub(r"\n?```$", "", cleaned)
     try:
-        return json.loads(text)
+        return json.loads(cleaned)
     except json.JSONDecodeError:
-        match = re.search(r"\{.*\}", text, re.DOTALL)
+        match = re.search(r"\{.*\}", cleaned, re.DOTALL)
         if not match:
             raise
         return json.loads(match.group(0))
+
+
+def _normalize_issue_list(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value]
+    if isinstance(value, str):
+        normalized = value.strip()
+        if not normalized or normalized.lower() == "n/a":
+            return []
+        return [normalized]
+    return []
 
 
 def parse_feedback_response(text: str) -> FeedbackCritique:
@@ -33,9 +48,9 @@ def parse_feedback_response(text: str) -> FeedbackCritique:
         parsed = _extract_json_block(text)
         critique = FeedbackCritique.model_validate(
             {
-                "alignment_issues": parsed.get("alignment_issues", []),
-                "missing_details": parsed.get("missing_details", []),
-                "style_issues": parsed.get("style_issues", []),
+                "alignment_issues": _normalize_issue_list(parsed.get("alignment_issues", [])),
+                "missing_details": _normalize_issue_list(parsed.get("missing_details", [])),
+                "style_issues": _normalize_issue_list(parsed.get("style_issues", [])),
                 "corrected_prompt": parsed.get("corrected_prompt", ""),
                 "confidence": parsed.get("confidence", 0.0),
                 "notes": parsed.get("notes", ""),

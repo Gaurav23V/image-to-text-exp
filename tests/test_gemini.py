@@ -21,6 +21,25 @@ def test_parse_feedback_response_handles_malformed_response() -> None:
     assert "could not be parsed" in critique.notes
 
 
+def test_parse_feedback_response_handles_code_fence_and_string_fields() -> None:
+    critique = parse_feedback_response(
+        """```json
+{
+  "alignment_issues": "N/A",
+  "missing_details": "Missing background detail.",
+  "style_issues": "N/A",
+  "corrected_prompt": "Refined prompt here.",
+  "confidence": 0.8,
+  "notes": "valid"
+}
+```"""
+    )
+
+    assert critique.corrected_prompt == "Refined prompt here."
+    assert critique.missing_details == ["Missing background detail."]
+    assert critique.alignment_issues == []
+
+
 def test_live_client_requires_api_key(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     with pytest.raises(GeminiError):
