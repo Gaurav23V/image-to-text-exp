@@ -8,13 +8,7 @@ deterministic seeds, saved artifacts, and machine-readable metrics.
 ## Command
 
 ```bash
-make phase1
-```
-
-Equivalent:
-
-```bash
-python -m src.cli phase1 --config configs/phase1.yaml
+uv run python -m src.cli phase1 --config configs/phase1.yaml
 ```
 
 ## What it does

@@ -8,19 +8,13 @@ the image, create a refined prompt, regenerate, and compare before versus after.
 ## Command
 
 ```bash
-make phase2
-```
-
-Equivalent:
-
-```bash
-python -m src.cli phase2 --config configs/phase2.yaml
+uv run python -m src.cli phase2 --config configs/phase2.yaml
 ```
 
 Minimal live API check:
 
 ```bash
-python -m src.cli phase2 --config configs/phase2_live_smoke.yaml
+uv run python -m src.cli phase2 --config configs/phase2_live_smoke.yaml
 ```
 
 ## Modes

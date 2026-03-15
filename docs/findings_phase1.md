@@ -9,7 +9,7 @@
 ## Decided
 
 - implement a registry with lightweight, gated, and optional heavyweight entries
-- make smoke runs use `tiny_sd`
+- make uv-based smoke runs use `tiny_sd`
 - keep FID off by default
 
 ## Implemented
