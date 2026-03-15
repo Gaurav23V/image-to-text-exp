@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import subprocess
 from pathlib import Path
 
 import pandas as pd
@@ -16,6 +17,7 @@ from src.reporting.reports import (
     generate_feedback_reports,
     generate_super_resolution_reports,
 )
+from src.services.interactive import InteractiveWorkflowService
 from src.utils.logging import configure_logging
 
 app = typer.Typer(help="Open-source text-to-image benchmarking and refinement CLI.")
@@ -81,6 +83,47 @@ def report(config: str = typer.Option("configs/phase1.yaml", exists=True, help="
     if sr_csv.exists():
         generate_super_resolution_reports(pd.read_csv(sr_csv), sr_csv.parent)
     typer.echo("Reports regenerated.")
+
+
+@app.command("feedback-once")
+def feedback_once(
+    prompt: str = typer.Option(..., help="Raw user prompt."),
+    config: str = typer.Option("configs/phase2.yaml", exists=True, help="Path to phase 2 config."),
+    seed: int = typer.Option(101, help="Random seed."),
+) -> None:
+    _load(config)
+    result = InteractiveWorkflowService.from_config_path(config).run_feedback(prompt, seed=seed)
+    typer.echo(f"Baseline image: {result.baseline_image_path}")
+    typer.echo(f"Refined image: {result.refined_image_path}")
+    typer.echo(f"Ollama prompt: {result.improved_prompt}")
+    typer.echo(f"Gemini prompt: {result.refined_prompt}")
+    typer.echo(f"Baseline CLIP: {result.baseline_clip_score:.4f}")
+    typer.echo(f"Refined CLIP: {result.refined_clip_score:.4f}")
+    typer.echo(f"CLIP delta: {result.clip_score_delta:.4f}")
+
+
+@app.command("sr-once")
+def sr_once(
+    prompt: str = typer.Option(..., help="Raw user prompt."),
+    config: str = typer.Option("configs/phase3.yaml", exists=True, help="Path to phase 3 config."),
+    seed: int = typer.Option(101, help="Random seed."),
+) -> None:
+    _load(config)
+    result = InteractiveWorkflowService.from_config_path(config).run_super_resolution(prompt, seed=seed)
+    typer.echo(f"Baseline image: {result.baseline_image_path}")
+    typer.echo(f"Upscaled image: {result.upscaled_image_path}")
+    typer.echo(f"Ollama prompt: {result.improved_prompt}")
+    typer.echo(f"Baseline CLIP: {result.baseline_clip_score:.4f}")
+    typer.echo(f"Upscaled CLIP: {result.upscaled_clip_score:.4f}")
+    typer.echo(f"CLIP delta: {result.clip_score_delta:.4f}")
+    typer.echo(f"SR backend: {result.backend}")
+
+
+@app.command()
+def ui() -> None:
+    load_dotenv()
+    configure_logging()
+    subprocess.run(["python3", "-m", "streamlit", "run", "src/frontend/app.py"], check=True)
 
 
 if __name__ == "__main__":

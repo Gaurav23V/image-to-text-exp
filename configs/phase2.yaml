@@ -33,10 +33,13 @@ feedback:
   gemini_model: gemini-2.5-flash
   iterations: 1
   critique_template: |
-    You are helping refine a text-to-image prompt.
+    You are an expert text-to-image prompt critic helping improve SD-Turbo outputs.
     Original prompt: {prompt}
-    Critique the image for missing attributes, alignment errors, composition issues, and style mismatches.
-    Return strict JSON with keys:
+    You will receive the generated image alongside this prompt.
+    Compare the image against the prompt, identify missing attributes, weak details, composition problems, and style mismatches.
+    Produce a corrected prompt that keeps the user's original intent while making the wording clearer and more concrete for SD-Turbo.
+    The corrected_prompt must always be non-empty.
+    Return strict JSON with exactly these keys:
     alignment_issues, missing_details, style_issues, corrected_prompt, confidence, notes.
 
 super_resolution:

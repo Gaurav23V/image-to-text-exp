@@ -24,6 +24,15 @@ class FeedbackCritique(BaseModel):
     raw_response: str = ""
 
 
+class PromptImprovementResult(BaseModel):
+    original_prompt: str
+    improved_prompt: str
+    notes: str = ""
+    raw_response: str = ""
+    model_name: str | None = None
+    used_fallback: bool = False
+
+
 class GenerationResult(BaseModel):
     run_id: str
     phase: str
@@ -95,5 +104,51 @@ class SuperResolutionResult(BaseModel):
     input_clip_score: float | None = None
     output_clip_score: float | None = None
     clip_score_delta: float | None = None
+    success: bool = True
+    error: str | None = None
+
+
+class InteractiveFeedbackRun(BaseModel):
+    run_id: str
+    timestamp: datetime
+    model_alias: str
+    seed: int
+    original_prompt: str
+    improved_prompt: str
+    prompt_improvement_notes: str = ""
+    prompt_improvement_used_fallback: bool = False
+    refined_prompt: str
+    baseline_image_path: str
+    refined_image_path: str
+    ollama_response_path: str | None = None
+    critique_path: str | None = None
+    raw_critique_path: str | None = None
+    baseline_clip_score: float | None = None
+    refined_clip_score: float | None = None
+    clip_score_delta: float | None = None
+    baseline_runtime_seconds: float | None = None
+    refined_runtime_seconds: float | None = None
+    success: bool = True
+    error: str | None = None
+
+
+class InteractiveSuperResolutionRun(BaseModel):
+    run_id: str
+    timestamp: datetime
+    model_alias: str
+    seed: int
+    original_prompt: str
+    improved_prompt: str
+    prompt_improvement_notes: str = ""
+    prompt_improvement_used_fallback: bool = False
+    baseline_image_path: str
+    upscaled_image_path: str
+    ollama_response_path: str | None = None
+    backend: str
+    baseline_clip_score: float | None = None
+    upscaled_clip_score: float | None = None
+    clip_score_delta: float | None = None
+    baseline_runtime_seconds: float | None = None
+    sr_runtime_seconds: float | None = None
     success: bool = True
     error: str | None = None

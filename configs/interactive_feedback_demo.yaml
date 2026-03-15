@@ -1,0 +1,42 @@
+run:
+  name: interactive_feedback_demo
+  output_root: results/interactive_demo/feedback
+  prompts_path: prompts/smoke_prompts.json
+  prompt_limit: 1
+  prompt_categories: []
+  seeds: [101]
+  images_per_prompt: 1
+  width: 256
+  height: 256
+  inference_steps: 2
+  guidance_scale: 0.0
+  scheduler: DDIMScheduler
+  device: cpu
+  precision: float32
+  smoke_mode: true
+  allow_mock_fallback: false
+models:
+  - tiny_sd
+metrics:
+  enable_clip_score: true
+  enable_sharpness: false
+  enable_fid: false
+reporting:
+  build_plots: false
+  build_grids: false
+feedback:
+  mode: mock
+  gemini_model: gemini-2.5-flash
+  iterations: 1
+  critique_template: |
+    You are an expert text-to-image prompt critic helping improve SD-Turbo outputs.
+    Original prompt: {prompt}
+    Compare the image against the prompt, identify missing details, composition problems, and style mismatches.
+    Return strict JSON with exactly these keys:
+    alignment_issues, missing_details, style_issues, corrected_prompt, confidence, notes.
+super_resolution:
+  backend: pil
+  fallback_backend: pil
+  model_name: realesr-general-x4v3
+  scale: 2
+  tile: 0

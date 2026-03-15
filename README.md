@@ -36,12 +36,47 @@ python -m src.cli smoke --config configs/smoke.yaml
 python -m src.cli report --config configs/phase1.yaml
 ```
 
+## Interactive demo frontend
+
+The repository also includes a Streamlit frontend for prompt-by-prompt
+interactive testing with an SD-Turbo baseline.
+
+Features:
+
+- raw prompt input
+- optional local Ollama prompt improvement using `gemma3:4b`
+- Gemini-based feedback refinement workflow
+- super-resolution workflow
+- side-by-side image comparisons
+- CLIP score display for each output
+
+Start the frontend:
+
+```bash
+python -m streamlit run src/frontend/app.py
+```
+
+The default sidebar config paths point to `configs/phase2.yaml` and
+`configs/phase3.yaml`. For lightweight UI testing, use:
+
+- `configs/interactive_feedback_demo.yaml`
+- `configs/interactive_sr_demo.yaml`
+
+Interactive CLI equivalents:
+
+```bash
+python -m src.cli feedback-once --prompt "A watercolor fox reading a book in a library"
+python -m src.cli sr-once --prompt "A watercolor fox reading a book in a library"
+python -m src.cli ui
+```
+
 ## Environment
 
 Copy `.env.example` to `.env` and update the values you need:
 
 - `GEMINI_API_KEY` for live Gemini refinement.
 - `HF_TOKEN` for gated Hugging Face models such as SD 3.5 and FLUX variants.
+- `OLLAMA_HOST` and `OLLAMA_MODEL` for local prompt improvement.
 
 The code works without those credentials in smoke mode and in mocked feedback
 mode. Missing credentials are logged as structured skips instead of crashing the
