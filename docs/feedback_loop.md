@@ -17,6 +17,12 @@ Equivalent:
 python -m src.cli phase2 --config configs/phase2.yaml
 ```
 
+Minimal live API check:
+
+```bash
+python -m src.cli phase2 --config configs/phase2_live_smoke.yaml
+```
+
 ## Modes
 
 - `mock` for tests and smoke mode
