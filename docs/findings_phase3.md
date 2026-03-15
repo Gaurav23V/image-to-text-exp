@@ -23,6 +23,8 @@
 
 - the phase is independently runnable
 - SR output tracking is separated from generation phases
+- default standalone phase 3 succeeded by falling back to PIL when the
+  Real-ESRGAN Python path hit a dependency compatibility problem
 
 ## Failed or deferred
 

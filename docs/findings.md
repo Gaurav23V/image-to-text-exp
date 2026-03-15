@@ -29,6 +29,17 @@
 - Mock Gemini flow for tests and smoke mode
 - Standalone SR command path that can discover or generate source images
 
+## Runtime findings from this environment
+
+- `tiny_sd` completed smoke baseline generation on CPU and produced saved images,
+  CSV rows, plots, manifests, and sample grids.
+- The live Gemini path worked with a single prompt after hardening the parser for
+  fenced JSON and string-valued issue fields.
+- The default phase 3 command completed end-to-end by generating source images
+  and then falling back from Real-ESRGAN to PIL because `basicsr` expected
+  `torchvision.transforms.functional_tensor`, which was unavailable in the
+  installed torchvision build.
+
 ## Known risk areas
 
 - Qwen-Image support may require upstream-specific loader logic

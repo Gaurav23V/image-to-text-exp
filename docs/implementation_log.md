@@ -26,3 +26,16 @@
 - worked: each phase has a runnable code path
 - failed: heavyweight model paths still depend on hardware/access
 - remains: tests, install validation, smoke runs, docs polish
+
+## Step 4: runtime validation
+
+- researched actual runtime behavior through pinned setup, automated tests, smoke
+  runs, a live Gemini pass, and a standalone phase 3 run
+- decided to pin the validated environment in `requirements.lock`
+- implemented a parser fix for fenced Gemini JSON and string-valued issue fields
+- worked: 14 automated tests passed, smoke completed, live Gemini completed, and
+  standalone phase 3 completed
+- failed: Real-ESRGAN Python imports were incompatible with the installed
+  torchvision build, so the SR phase used the documented PIL fallback
+- remains: add a known-good neural SR dependency combination or a CLI backend
+  alternative such as `realesrgan-ncnn-vulkan`

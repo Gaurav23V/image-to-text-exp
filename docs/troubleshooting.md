@@ -23,6 +23,11 @@ super_resolution:
   backend: pil
 ```
 
+If you see `No module named 'torchvision.transforms.functional_tensor'`, your
+installed `basicsr` and `torchvision` combination is incompatible for the
+Python Real-ESRGAN path. Keep the PIL fallback enabled or switch to an external
+CLI backend.
+
 ## CLIP score download issues
 
 Re-run after network access is restored or disable CLIP temporarily:

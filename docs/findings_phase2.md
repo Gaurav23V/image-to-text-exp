@@ -22,6 +22,8 @@
 
 - mocked mode is deterministic and suitable for tests
 - malformed responses do not crash the whole phase
+- live Gemini returned a usable corrected prompt once the parser accepted fenced
+  JSON and string-valued issue fields
 
 ## Failed or deferred
 
