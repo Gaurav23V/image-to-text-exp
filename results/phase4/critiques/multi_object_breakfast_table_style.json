@@ -1,0 +1,9 @@
+{
+  "issues": [
+    "Lighting is flat and lacks warmth. Color palette is muted and lacks vibrancy. The scene feels staged and unconvincing. Rendering is overly smooth and lacks texture. Contrast is low.",
+    "The composition feels cluttered and lacks a clear focal point. The newspaper and vase are distracting elements."
+  ],
+  "corrected_prompt": "Warm morning sunlight bathes a rustic wooden table. A vibrant blue ceramic mug holds a croissant. Yellow daffodils in a simple vase add a pop of color. Focus on a cozy, inviting atmosphere.",
+  "confidence": 0.95,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"Lighting is flat and lacks warmth. Color palette is muted and lacks vibrancy. The scene feels staged and unconvincing. Rendering is overly smooth and lacks texture. Contrast is low.\",\n    \"The composition feels cluttered and lacks a clear focal point. The newspaper and vase are distracting elements.\"\n  ],\n  \"corrected_prompt\": \"Warm morning sunlight bathes a rustic wooden table. A vibrant blue ceramic mug holds a croissant. Yellow daffodils in a simple vase add a pop of color. Focus on a cozy, inviting atmosphere.\",\n  \"confidence\": 0.95\n}\n```"
+}

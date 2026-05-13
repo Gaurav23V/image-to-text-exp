@@ -1,0 +1,6 @@
+{
+  "issues": "The image lacks depth and mood. The lighting is flat, and the color palette is muted. The skin texture feels overly smooth, detracting from the 'natural' feel. The composition is unremarkable.",
+  "corrected_prompt": "Cinematic portrait. Dramatic window light, deep shadows, rich navy blazer, realistic skin texture, shallow depth of field, 80s editorial style.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": \"The image lacks depth and mood. The lighting is flat, and the color palette is muted. The skin texture feels overly smooth, detracting from the 'natural' feel. The composition is unremarkable.\",\n  \"corrected_prompt\": \"Cinematic portrait. Dramatic window light, deep shadows, rich navy blazer, realistic skin texture, shallow depth of field, 80s editorial style.\"\n}\n```"
+}

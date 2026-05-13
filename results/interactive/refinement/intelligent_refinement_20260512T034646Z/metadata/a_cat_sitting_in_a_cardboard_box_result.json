@@ -1,0 +1,87 @@
+{
+  "run_id": "intelligent_refinement_20260512T034646Z",
+  "timestamp": "2026-05-12T03:46:46.631318Z",
+  "model_alias": "sd15",
+  "seed": 42,
+  "original_prompt": "A cat sitting in a cardboard box",
+  "negative_prompt": "blurry, distorted, cluttered, bad framing, watermark, signature, human, bright light, photorealistic",
+  "winner_critic": "detail",
+  "winner_seed_offset": 0,
+  "winner_prompt": "detail",
+  "winner_image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/winner/a_cat_sitting_in_a_cardboard_box.png",
+  "winner_clip_score": 0.336000919342041,
+  "baseline_image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/baseline/a_cat_sitting_in_a_cardboard_box.png",
+  "baseline_clip_score": 0.30372321605682373,
+  "clip_score_delta": 0.032277703285217285,
+  "total_runtime_seconds": 285.35007426899756,
+  "critic_results": [
+    {
+      "critic": "composition",
+      "refined_prompt": "A fluffy grey tabby cat curled up comfortably in a large, open cardboard box, with a slightly low camera angle looking up at the cat, creating a sense of warmth and inviting the viewer into the scene. The box occupies the lower half of the frame, with plenty of negative space above the cat, emphasizing its cozy position. Soft, natural lighting.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.3332839012145996,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_composition_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.3192145526409149,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_composition_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.33390021324157715,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_composition_2.png"
+        }
+      ],
+      "best_clip_score": 0.33390021324157715
+    },
+    {
+      "critic": "detail",
+      "refined_prompt": "A fluffy gray tabby cat sitting comfortably in a slightly worn, brown cardboard box with visible cardboard texture and creases. Soft lighting, shallow depth of field, realistic fur detail, natural pose.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.336000919342041,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_detail_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.32744526863098145,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_detail_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.3294760584831238,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_detail_2.png"
+        }
+      ],
+      "best_clip_score": 0.336000919342041
+    },
+    {
+      "critic": "style",
+      "refined_prompt": "A fluffy grey tabby cat, bathed in soft, diffused natural light, comfortably nestled in a worn, brown cardboard box. The box is partially open, revealing a glimpse of a cozy, warmly lit living room. Cinematic lighting, shallow depth of field, photorealistic rendering, 8k, detailed fur, warm color palette, atmospheric, serene mood.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.3081488311290741,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_style_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.26807358860969543,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_style_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.33350643515586853,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T034646Z/candidates/a_cat_sitting_in_a_cardboard_box_style_2.png"
+        }
+      ],
+      "best_clip_score": 0.33350643515586853
+    }
+  ],
+  "success": true,
+  "error": null
+}

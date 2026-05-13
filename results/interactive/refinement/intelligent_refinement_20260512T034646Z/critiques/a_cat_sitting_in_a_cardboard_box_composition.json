@@ -1,0 +1,9 @@
+{
+  "issues": [
+    "The cat is centered and dominates the frame, with minimal negative space. The box is small and feels cramped. The camera angle is flat and uninteresting. There's no sense of depth or layering.",
+    "The composition lacks visual interest and feels static. The box is simply a backdrop for the cat, not an integral part of the scene."
+  ],
+  "corrected_prompt": "A fluffy grey tabby cat curled up comfortably in a large, open cardboard box, with a slightly low camera angle looking up at the cat, creating a sense of warmth and inviting the viewer into the scene. The box occupies the lower half of the frame, with plenty of negative space above the cat, emphasizing its cozy position. Soft, natural lighting.",
+  "confidence": 0.95,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"The cat is centered and dominates the frame, with minimal negative space. The box is small and feels cramped. The camera angle is flat and uninteresting. There's no sense of depth or layering.\",\n    \"The composition lacks visual interest and feels static. The box is simply a backdrop for the cat, not an integral part of the scene.\"\n  ],\n  \"corrected_prompt\": \"A fluffy grey tabby cat curled up comfortably in a large, open cardboard box, with a slightly low camera angle looking up at the cat, creating a sense of warmth and inviting the viewer into the scene. The box occupies the lower half of the frame, with plenty of negative space above the cat, emphasizing its cozy position. Soft, natural lighting.\",\n  \"confidence\": 0.95\n}\n```"
+}

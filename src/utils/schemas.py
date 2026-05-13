@@ -152,3 +152,24 @@ class InteractiveSuperResolutionRun(BaseModel):
     sr_runtime_seconds: float | None = None
     success: bool = True
     error: str | None = None
+
+
+class RefinementResult(BaseModel):
+    run_id: str
+    timestamp: datetime
+    model_alias: str
+    seed: int
+    original_prompt: str
+    negative_prompt: str | None = None
+    winner_critic: str | None = None
+    winner_seed_offset: int | None = None
+    winner_prompt: str | None = None
+    winner_image_path: str | None = None
+    winner_clip_score: float | None = None
+    baseline_image_path: str | None = None
+    baseline_clip_score: float | None = None
+    clip_score_delta: float | None = None
+    total_runtime_seconds: float | None = None
+    critic_results: list[dict] = Field(default_factory=list)
+    success: bool = True
+    error: str | None = None

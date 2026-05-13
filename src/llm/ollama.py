@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import base64
 import json
 import os
 import re
 from abc import ABC, abstractmethod
+from io import BytesIO
 from typing import Any
 
 import requests
+from PIL import Image
 
 from src.feedback.prompts import DEFAULT_OLLAMA_PROMPT_IMPROVER_SYSTEM_PROMPT
 from src.utils.schemas import PromptImprovementResult
@@ -116,3 +119,80 @@ def build_prompt_improver() -> BasePromptImprover:
         return LocalOllamaPromptImprover()
     except Exception:
         return PassthroughPromptImprover()
+
+
+# ── Phase 4: multimodal refinement via local Ollama ──
+
+class OllamaRefinementClient:
+    """Replaces Gemini for negative prompt generation + image critique using local Ollama.
+    Uses keep_alive=0 to unload model from GPU after each call, freeing VRAM for SD."""
+
+    def __init__(
+        self,
+        model_name: str | None = None,
+        host: str | None = None,
+        timeout: int = 120,
+    ) -> None:
+        self.model_name = model_name or os.getenv("OLLAMA_MODEL", "gemma3:4b")
+        self.host = (host or os.getenv("OLLAMA_HOST", "http://localhost:11434")).rstrip("/")
+        self.timeout = timeout
+
+    @staticmethod
+    def _image_to_base64(image: Image.Image) -> str:
+        buffer = BytesIO()
+        image.convert("RGB").save(buffer, format="PNG")
+        return base64.b64encode(buffer.getvalue()).decode("utf-8")
+
+    def _call(self, prompt: str, system: str = "", images: list[str] | None = None) -> str:
+        payload: dict[str, Any] = {
+            "model": self.model_name,
+            "prompt": prompt,
+            "stream": False,
+            "keep_alive": 0,  # unload from GPU after response
+            "options": {"temperature": 0.2},
+        }
+        if system:
+            payload["system"] = system
+        if images:
+            payload["images"] = images
+
+        response = requests.post(f"{self.host}/api/generate", json=payload, timeout=self.timeout)
+        if not response.ok:
+            raise OllamaError(f"Ollama request failed: {response.status_code} {response.text[:300]}")
+        body = response.json()
+        text = str(body.get("response", ""))
+        if not text.strip():
+            raise OllamaError("Ollama returned empty response.")
+        return text
+
+    def generate_negative_prompt(self, prompt: str, template: str) -> str:
+        text = self._call(prompt=template.format(prompt=prompt))
+        try:
+            parsed = _extract_json_block(text)
+            neg = str(parsed.get("negative_prompt", "")).strip()
+            if neg:
+                return neg
+        except Exception:
+            pass
+        return "blurry, low quality, distorted, bad anatomy, watermark"
+
+    def critique_image(self, prompt: str, image: Image.Image, template: str) -> dict:
+        text = self._call(
+            prompt=template.format(prompt=prompt),
+            images=[self._image_to_base64(image)],
+        )
+        try:
+            parsed = _extract_json_block(text)
+            return {
+                "issues": parsed.get("issues", []),
+                "corrected_prompt": parsed.get("corrected_prompt", prompt),
+                "confidence": float(parsed.get("confidence", 0.5)),
+                "raw_response": text,
+            }
+        except Exception:
+            return {
+                "issues": ["Could not parse response"],
+                "corrected_prompt": prompt,
+                "confidence": 0.0,
+                "raw_response": text,
+            }

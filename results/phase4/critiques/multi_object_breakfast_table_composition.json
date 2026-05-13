@@ -1,0 +1,6 @@
+{
+  "issues": "The image feels cluttered with too many objects and a static camera angle. The mug is awkwardly positioned, and the newspaper obscures the table's surface. Negative space is minimal, lacking a sense of calm morning light.",
+  "corrected_prompt": "Wide shot of a rustic wooden table. A single blue mug sits center frame, a croissant on a plate to the right, and a vase with yellow flowers subtly in the background. Morning sunlight streams in from the left.",
+  "confidence": 0.9,
+  "raw_response": "```json\n{\n  \"issues\": \"The image feels cluttered with too many objects and a static camera angle. The mug is awkwardly positioned, and the newspaper obscures the table's surface. Negative space is minimal, lacking a sense of calm morning light.\",\n  \"corrected_prompt\": \"Wide shot of a rustic wooden table. A single blue mug sits center frame, a croissant on a plate to the right, and a vase with yellow flowers subtly in the background. Morning sunlight streams in from the left.\",\n  \"confidence\": 0.9\n}\n```"
+}

@@ -1,0 +1,11 @@
+{
+  "issues": [
+    "The chair is not bright red, it's a muted red.",
+    "The background is not seamless white, it has subtle texture.",
+    "Shadows are too harsh.",
+    "Composition is not centered."
+  ],
+  "corrected_prompt": "Studio product photo of a muted red, glossy plastic chair on a subtly textured white background. Soft, diffused shadows, centered composition.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"The chair is not bright red, it's a muted red.\",\n    \"The background is not seamless white, it has subtle texture.\",\n    \"Shadows are too harsh.\",\n    \"Composition is not centered.\"\n  ],\n  \"corrected_prompt\": \"Studio product photo of a muted red, glossy plastic chair on a subtly textured white background. Soft, diffused shadows, centered composition.\"\n}\n```"
+}

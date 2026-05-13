@@ -1,5 +1,5 @@
 # Super-resolution summary
 
-- Total rows: 22
-- Successful rows: 22
-- Mean sharpness delta: -989.8588
+- Total rows: 16
+- Successful rows: 16
+- Mean sharpness delta: -917.4816

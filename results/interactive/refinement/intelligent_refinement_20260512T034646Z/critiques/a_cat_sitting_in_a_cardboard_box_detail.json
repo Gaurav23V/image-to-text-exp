@@ -1,0 +1,10 @@
+{
+  "issues": [
+    "The cat is gray, but lacks distinct markings and appears too uniformly colored. The cardboard box is a standard brown, not a realistic cardboard texture. The cat's fur appears smooth and lacks detail.",
+    "The image lacks a sense of depth and realism. The box appears flat and untextured.",
+    "The cat's pose is somewhat static and lacks a natural, relaxed feel."
+  ],
+  "corrected_prompt": "A fluffy gray tabby cat sitting comfortably in a slightly worn, brown cardboard box with visible cardboard texture and creases. Soft lighting, shallow depth of field, realistic fur detail, natural pose.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"The cat is gray, but lacks distinct markings and appears too uniformly colored. The cardboard box is a standard brown, not a realistic cardboard texture. The cat's fur appears smooth and lacks detail.\",\n    \"The image lacks a sense of depth and realism. The box appears flat and untextured.\",\n    \"The cat's pose is somewhat static and lacks a natural, relaxed feel.\"\n  ],\n  \"corrected_prompt\": \"A fluffy gray tabby cat sitting comfortably in a slightly worn, brown cardboard box with visible cardboard texture and creases. Soft lighting, shallow depth of field, realistic fur detail, natural pose.\"\n}\n```"
+}

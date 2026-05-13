@@ -1,0 +1,6 @@
+{
+  "issues": "The subject is centered, lacking depth and balance. Shallow depth of field is minimal, and negative space is insufficient. Framing is too tight.",
+  "corrected_prompt": "Wide shot, slightly off-center, with expansive negative space. Increase depth of field, emphasizing the window light and creating a balanced composition.",
+  "confidence": 0.95,
+  "raw_response": "```json\n{\n  \"issues\": \"The subject is centered, lacking depth and balance. Shallow depth of field is minimal, and negative space is insufficient. Framing is too tight.\",\n  \"corrected_prompt\": \"Wide shot, slightly off-center, with expansive negative space. Increase depth of field, emphasizing the window light and creating a balanced composition.\",\n  \"confidence\": 0.95\n}\n```"
+}

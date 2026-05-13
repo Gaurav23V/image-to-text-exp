@@ -1,0 +1,10 @@
+{
+  "issues": [
+    "The mug lacks intricate design details and a textured surface.",
+    "Steam and scattered tea leaves are missing.",
+    "The background is not softly out of focus."
+  ],
+  "corrected_prompt": "Realistic close-up of a Japanese ceramic tea mug. Focus on detailed texture and surface. Add rising steam and scattered tea leaves. Soft, blurred wooden background.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"The mug lacks intricate design details and a textured surface.\",\n    \"Steam and scattered tea leaves are missing.\",\n    \"The background is not softly out of focus.\"\n  ],\n  \"corrected_prompt\": \"Realistic close-up of a Japanese ceramic tea mug. Focus on detailed texture and surface. Add rising steam and scattered tea leaves. Soft, blurred wooden background.\"\n}\n```"
+}

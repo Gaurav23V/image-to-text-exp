@@ -1,0 +1,55 @@
+{
+  "run_id": "intelligent_refinement_20260512T031738Z",
+  "timestamp": "2026-05-12T03:17:38.667999Z",
+  "model_alias": "sd15",
+  "seed": 42,
+  "original_prompt": "A watercolor fox reading a book",
+  "negative_prompt": "blurry, distorted, cluttered, signature, text, photorealistic, bright, oversaturated",
+  "winner_critic": "detail",
+  "winner_seed_offset": 0,
+  "winner_prompt": "detail",
+  "winner_image_path": "results/interactive/refinement/intelligent_refinement_20260512T031738Z/winner/a_watercolor_fox_reading_a_book.png",
+  "winner_clip_score": 0.3646409809589386,
+  "baseline_image_path": "results/interactive/refinement/intelligent_refinement_20260512T031738Z/baseline/a_watercolor_fox_reading_a_book.png",
+  "baseline_clip_score": 0.39905279874801636,
+  "clip_score_delta": -0.03441181778907776,
+  "total_runtime_seconds": 288.8666013189977,
+  "critic_results": [
+    {
+      "critic": "composition",
+      "refined_prompt": "A watercolor painting of a fox sitting comfortably in a cozy armchair, engrossed in a large, open book. The fox is slightly to the left of the frame, with the book resting on its lap, angled slightly towards the viewer. Soft, warm lighting illuminates the scene, creating a sense of tranquility and inviting the viewer to imagine the story. The background is blurred, suggesting a comfortable, inviting room. Focus on a relaxed and engaged expression on the fox's face.",
+      "candidates": [],
+      "best_clip_score": null
+    },
+    {
+      "critic": "detail",
+      "refined_prompt": "A realistic watercolor painting of a fox sitting and reading an open, pale blue hardcover book with white pages. The fox has detailed fur and a gentle expression. The book has a slightly worn texture.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.3646409809589386,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T031738Z/candidates/a_watercolor_fox_reading_a_book_detail_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.33845242857933044,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T031738Z/candidates/a_watercolor_fox_reading_a_book_detail_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.3470335900783539,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T031738Z/candidates/a_watercolor_fox_reading_a_book_detail_2.png"
+        }
+      ],
+      "best_clip_score": 0.3646409809589386
+    },
+    {
+      "critic": "style",
+      "refined_prompt": "A serene watercolor painting of a red fox curled up in a cozy armchair, deeply engrossed in an antique leather-bound book. Soft, diffused golden light streams through a nearby window, illuminating dust motes and creating a warm, inviting atmosphere. Detailed watercolor textures, rich color palette of deep reds, browns, and muted blues, and a focus on capturing the fox's peaceful expression.  Highly detailed, 8k, masterpiece, trending on artstation.",
+      "candidates": [],
+      "best_clip_score": null
+    }
+  ],
+  "success": true,
+  "error": null
+}

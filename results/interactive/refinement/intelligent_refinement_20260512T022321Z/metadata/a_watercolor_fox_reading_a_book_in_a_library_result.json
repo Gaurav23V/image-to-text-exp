@@ -1,0 +1,71 @@
+{
+  "run_id": "intelligent_refinement_20260512T022321Z",
+  "timestamp": "2026-05-12T02:23:21.512107Z",
+  "model_alias": "sd15",
+  "seed": 42,
+  "original_prompt": "A watercolor fox reading a book in a library",
+  "negative_prompt": "cluttered shelves, modern furniture, digital art, blurry text, distorted fox, out of focus, harsh lighting",
+  "winner_critic": "composition",
+  "winner_seed_offset": 2,
+  "winner_prompt": "composition",
+  "winner_image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/winner/a_watercolor_fox_reading_a_book_in_a_library.png",
+  "winner_clip_score": 0.41168391704559326,
+  "baseline_image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/baseline/a_watercolor_fox_reading_a_book_in_a_library.png",
+  "baseline_clip_score": 0.39819151163101196,
+  "clip_score_delta": 0.013492405414581299,
+  "total_runtime_seconds": 62.80126029800158,
+  "critic_results": [
+    {
+      "critic": "composition",
+      "refined_prompt": "A watercolor fox reading a book in a cozy library, with bookshelves visible in the background, a medium shot, eye-level camera angle, balanced composition with ample negative space.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.38020873069763184,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/candidates/a_watercolor_fox_reading_a_book_in_a_library_composition_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.33102554082870483,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/candidates/a_watercolor_fox_reading_a_book_in_a_library_composition_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.41168391704559326,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/candidates/a_watercolor_fox_reading_a_book_in_a_library_composition_2.png"
+        }
+      ],
+      "best_clip_score": 0.41168391704559326
+    },
+    {
+      "critic": "detail",
+      "refined_prompt": "A watercolor painting of a reddish-orange fox with detailed fur texture, reading an open book with realistic paper pages, in a library filled with diverse books on shelves. The fox has realistic eyes and ears. The overall style should maintain the watercolor aesthetic but with improved detail on the fox's fur, the book's pages, and the spines of the library books.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.3971615433692932,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/candidates/a_watercolor_fox_reading_a_book_in_a_library_detail_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.3209786117076874,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/candidates/a_watercolor_fox_reading_a_book_in_a_library_detail_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.3950025141239166,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260512T022321Z/candidates/a_watercolor_fox_reading_a_book_in_a_library_detail_2.png"
+        }
+      ],
+      "best_clip_score": 0.3971615433692932
+    },
+    {
+      "critic": "style",
+      "refined_prompt": "A charming watercolor illustration of a fox engrossed in a book, set in a cozy, dimly lit library. Soft, warm light filters from an unseen source, casting gentle shadows and highlighting the textures of the books and the fox's fur. The color palette features rich, earthy tones for the fox and books, contrasted with deep blues and purples in the background, creating a warm and inviting atmosphere. The watercolor technique should be evident with soft edges, blended colors, and a painterly feel, evoking a sense of quiet contemplation and wonder. High detail in the book spines and the fox's expressive eyes, rendered with subtle watercolor washes.",
+      "candidates": [],
+      "best_clip_score": null
+    }
+  ],
+  "success": true,
+  "error": null
+}

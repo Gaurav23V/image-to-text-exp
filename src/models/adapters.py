@@ -51,6 +51,33 @@ class BaseTextToImageAdapter(ABC):
     ) -> GeneratedImage:
         raise NotImplementedError
 
+    def generate_batch(
+        self,
+        prompt: str,
+        seed: int,
+        width: int,
+        height: int,
+        inference_steps: int,
+        guidance_scale: float,
+        scheduler: str,
+        negative_prompt: str | None = None,
+        num_images: int = 1,
+    ) -> list[GeneratedImage]:
+        results: list[GeneratedImage] = []
+        for i in range(num_images):
+            results.append(
+                self.generate(
+                    prompt=prompt,
+                    seed=seed + i,
+                    width=width,
+                    height=height,
+                    inference_steps=inference_steps,
+                    guidance_scale=guidance_scale,
+                    scheduler=scheduler,
+                )
+            )
+        return results
+
 
 class MockTextToImageAdapter(BaseTextToImageAdapter):
     def load(self) -> None:
@@ -184,6 +211,71 @@ class DiffusersTextToImageAdapter(BaseTextToImageAdapter):
             peak_gpu_memory_mb=peak_gpu_memory_mb,
             extra={"scheduler": scheduler},
         )
+
+    def generate_batch(
+        self,
+        prompt: str,
+        seed: int,
+        width: int,
+        height: int,
+        inference_steps: int,
+        guidance_scale: float,
+        scheduler: str,
+        negative_prompt: str | None = None,
+        num_images: int = 1,
+    ) -> list[GeneratedImage]:
+        if self.pipe is None:
+            raise ModelLoadError("Model has not been loaded.")
+
+        self._apply_scheduler(scheduler)
+        if self.device == "cuda":
+            torch.cuda.reset_peak_memory_stats()
+        generator = torch.Generator(device="cpu").manual_seed(seed)
+        process = psutil.Process()
+        call_kwargs: dict[str, Any] = {
+            "prompt": prompt,
+            "num_inference_steps": inference_steps,
+            "guidance_scale": guidance_scale,
+            "height": height,
+            "width": width,
+            "generator": generator,
+            "num_images_per_prompt": num_images,
+        }
+        if negative_prompt:
+            call_kwargs["negative_prompt"] = negative_prompt
+        try:
+            import time
+
+            started = time.perf_counter()
+            with torch.inference_mode():
+                output = self.pipe(**call_kwargs)
+            runtime_seconds = time.perf_counter() - started
+        except TypeError:
+            call_kwargs.pop("height", None)
+            call_kwargs.pop("width", None)
+            call_kwargs.pop("negative_prompt", None)
+            import time
+
+            started = time.perf_counter()
+            with torch.inference_mode():
+                output = self.pipe(**call_kwargs)
+            runtime_seconds = time.perf_counter() - started
+        peak_gpu_memory_mb = (
+            torch.cuda.max_memory_allocated() / (1024 * 1024) if self.device == "cuda" else None
+        )
+        results: list[GeneratedImage] = []
+        for img in output.images:
+            image = img if isinstance(img, Image.Image) else Image.open(io.BytesIO(img))
+            results.append(
+                GeneratedImage(
+                    image=image,
+                    runtime_seconds=runtime_seconds / max(len(output.images), 1),
+                    process_memory_mb=process.memory_info().rss / (1024 * 1024),
+                    peak_gpu_memory_mb=peak_gpu_memory_mb,
+                    extra={"scheduler": scheduler, "batch_index": len(results)},
+                )
+            )
+        return results
 
 
 def build_text_to_image_adapter(

@@ -1,18 +1,15 @@
 ```json
 {
-  "alignment_issues": [
-    "The 'shallow depth of field' is present, but the background elements (vertical slats, window frame) are still quite discernible and somewhat distracting, not fully achieving a strong isolation of the subject that 'shallow depth of field' often implies.",
-    "The 'natural skin texture' is very smooth and polished, leaning towards an idealized or retouched look rather than a truly raw or 'natural' texture with visible pores or minor imperfections."
-  ],
+  "alignment_issues": [],
   "missing_details": [
-    "The prompt does not specify the subject's hair, which is a very prominent feature in the image (long, voluminous, perfectly styled wavy/curled hair).",
-    "The prompt could benefit from more specific details regarding the 'tailored navy blazer' to emphasize its fit or style (e.g., 'sharp lines', 'structured shoulders')."
+    "The prompt mentions 'natural skin texture,' but the generated image has a slightly airbrushed or smoothed appearance, lacking the subtle imperfections that define natural skin.",
+    "The prompt specifies 'soft window light,' which is present, but the direction and quality of the light could be more explicitly defined to enhance the editorial feel. For instance, 'side window light' or 'diffused window light' could be more precise."
   ],
   "style_issues": [
-    "While 'editorial portrait' is well-matched, the combination of very smooth skin and perfectly styled hair pushes the image towards a high-fashion or glamorous editorial style, which might be a slight stylistic deviation from a more general 'editorial portrait' that could encompass a broader range of looks, including more understated or raw styles."
+    "While the image is an editorial portrait, it leans slightly towards a more commercial or stock photo aesthetic. Adding terms like 'cinematic lighting' or 'moody' could push it further into a distinct editorial style."
   ],
-  "corrected_prompt": "An editorial portrait of a young woman with long, voluminous wavy hair, wearing a perfectly tailored navy blazer with sharp lines, realistic skin texture with subtle pores, soft diffused window light, extremely shallow depth of field with a softly blurred, minimalist background.",
-  "confidence": "high",
-  "notes": "The original prompt is quite good, and the image largely aligns with it. The suggested corrections aim to refine the prompt by adding details for prominent features (like hair) that were generated but not specified, and by strengthening the descriptions of attributes like 'natural skin texture' and 'shallow depth of field' to achieve a more precise outcome, addressing the subtle misalignments observed."
+  "corrected_prompt": "An editorial portrait of a young woman with natural, visible skin texture, wearing a tailored navy blazer and a white blouse, seated with hands clasped. The scene is lit by soft, diffused window light from the side, creating subtle shadows and highlights. Shallow depth of field with a softly blurred background. Cinematic lighting, professional photography, high detail.",
+  "confidence": 4,
+  "notes": "The generated image is a good starting point and captures the core elements of the prompt. However, to achieve a more nuanced and specific editorial look, emphasizing natural skin texture and refining the lighting description would be beneficial. The addition of 'cinematic lighting' and 'professional photography' aims to elevate the overall aesthetic."
 }
 ```

@@ -1,0 +1,9 @@
+{
+  "issues": [
+    "The fox is not watercolor, it's a realistic painting. The book is not clearly visible and appears to be a simple flat object. The fox's fur is not detailed enough.",
+    "The book's pages are not open, it's closed. The book's cover is a plain white color, not a specific color."
+  ],
+  "corrected_prompt": "A realistic watercolor painting of a fox sitting and reading an open, pale blue hardcover book with white pages. The fox has detailed fur and a gentle expression. The book has a slightly worn texture.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"The fox is not watercolor, it's a realistic painting. The book is not clearly visible and appears to be a simple flat object. The fox's fur is not detailed enough.\",\n    \"The book's pages are not open, it's closed. The book's cover is a plain white color, not a specific color.\"\n  ],\n  \"corrected_prompt\": \"A realistic watercolor painting of a fox sitting and reading an open, pale blue hardcover book with white pages. The fox has detailed fur and a gentle expression. The book has a slightly worn texture.\"\n}\n```"
+}

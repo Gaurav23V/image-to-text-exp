@@ -1,0 +1,10 @@
+{
+  "issues": [
+    "The blazer is incorrectly navy, it should be white.",
+    "Skin texture is too smooth, needs more natural variation.",
+    "Depth of field is too strong, needs to be softer."
+  ],
+  "corrected_prompt": "Editorial portrait of a young woman in a crisp white tailored blazer. Natural skin texture, soft window light, shallow depth of field. Focus on subtle details.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"The blazer is incorrectly navy, it should be white.\",\n    \"Skin texture is too smooth, needs more natural variation.\",\n    \"Depth of field is too strong, needs to be softer.\"\n  ],\n  \"corrected_prompt\": \"Editorial portrait of a young woman in a crisp white tailored blazer. Natural skin texture, soft window light, shallow depth of field. Focus on subtle details.\"\n}\n```"
+}

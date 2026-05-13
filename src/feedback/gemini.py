@@ -68,9 +68,25 @@ def parse_feedback_response(text: str) -> FeedbackCritique:
         )
 
 
+def parse_negative_prompt_response(text: str) -> str:
+    try:
+        parsed = _extract_json_block(text)
+        neg = str(parsed.get("negative_prompt", "")).strip()
+        if neg:
+            return neg
+    except Exception:
+        pass
+    # Fallback: use a generic negative prompt
+    return "blurry, low quality, distorted, ugly, bad anatomy, watermark, text"
+
+
 class BaseGeminiClient(ABC):
     @abstractmethod
     def critique_image(self, prompt: str, image: Image.Image, template: str, model_name: str) -> FeedbackCritique:
+        raise NotImplementedError
+
+    @abstractmethod
+    def generate_negative_prompt(self, prompt: str, template: str, model_name: str) -> str:
         raise NotImplementedError
 
 
@@ -85,6 +101,9 @@ class MockGeminiClient(BaseGeminiClient):
             notes="Mock Gemini response.",
             raw_response='{"corrected_prompt":"mock"}',
         )
+
+    def generate_negative_prompt(self, prompt: str, template: str, model_name: str) -> str:
+        return "blurry, low quality, distorted, ugly, bad anatomy, watermark, text"
 
 
 class LiveGeminiClient(BaseGeminiClient):
@@ -127,6 +146,26 @@ class LiveGeminiClient(BaseGeminiClient):
         parts = body.get("candidates", [{}])[0].get("content", {}).get("parts", [])
         text = "\n".join(part.get("text", "") for part in parts if "text" in part)
         return parse_feedback_response(text)
+
+    def generate_negative_prompt(self, prompt: str, template: str, model_name: str) -> str:
+        url = f"{self.base_url}/{model_name}:generateContent?key={self.api_key}"
+        payload = {
+            "contents": [
+                {
+                    "parts": [
+                        {"text": template.format(prompt=prompt)},
+                    ]
+                }
+            ],
+            "generationConfig": {"temperature": 0.2},
+        }
+        response = requests.post(url, json=payload, timeout=self.timeout)
+        if not response.ok:
+            raise GeminiError(f"Gemini request failed: {response.status_code} {response.text[:300]}")
+        body = response.json()
+        parts = body.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+        text = "\n".join(part.get("text", "") for part in parts if "text" in part)
+        return parse_negative_prompt_response(text)
 
 
 def build_gemini_client(mode: str) -> BaseGeminiClient:

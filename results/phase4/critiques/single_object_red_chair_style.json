@@ -1,0 +1,9 @@
+{
+  "issues": [
+    "Lighting is flat and lacks depth. Color palette is too neutral. Composition feels static. Rendering is slightly artificial.",
+    "Overall mood is uninspired and lacks visual impact."
+  ],
+  "corrected_prompt": "Dramatic studio shot of a vibrant red chair. Volumetric lighting, shallow depth of field, sleek white background. Dynamic composition, high contrast, photorealistic.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"Lighting is flat and lacks depth. Color palette is too neutral. Composition feels static. Rendering is slightly artificial.\",\n    \"Overall mood is uninspired and lacks visual impact.\"\n  ],\n  \"corrected_prompt\": \"Dramatic studio shot of a vibrant red chair. Volumetric lighting, shallow depth of field, sleek white background. Dynamic composition, high contrast, photorealistic.\"\n}\n```"
+}

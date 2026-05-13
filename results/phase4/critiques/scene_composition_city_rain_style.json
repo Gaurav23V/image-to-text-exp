@@ -1,0 +1,6 @@
+{
+  "issues": "The image lacks depth and a strong cinematic feel. Colors are overly saturated and the reflections are simplistic. The mood is flat, not immersive.",
+  "corrected_prompt": "Ultra-detailed, cinematic wide shot of a rain-slicked neon city street. Deep blues and vibrant pinks, hyperrealistic reflections, moody atmosphere, 8k.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": \"The image lacks depth and a strong cinematic feel. Colors are overly saturated and the reflections are simplistic. The mood is flat, not immersive.\",\n  \"corrected_prompt\": \"Ultra-detailed, cinematic wide shot of a rain-slicked neon city street. Deep blues and vibrant pinks, hyperrealistic reflections, moody atmosphere, 8k.\"\n}\n```"
+}

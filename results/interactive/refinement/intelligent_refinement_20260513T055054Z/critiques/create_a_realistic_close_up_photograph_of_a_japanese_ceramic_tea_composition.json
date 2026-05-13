@@ -1,0 +1,6 @@
+{
+  "issues": "The mug is centered, lacking depth and visual interest. Steam and leaves feel tacked on. Shallow depth of field is lost.",
+  "corrected_prompt": "Low angle shot, slightly off-center mug with steam subtly rising. Focus on the mug's texture. Wooden counter and scattered leaves in blurred background, creating a sense of depth and balance.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": \"The mug is centered, lacking depth and visual interest. Steam and leaves feel tacked on. Shallow depth of field is lost.\",\n  \"corrected_prompt\": \"Low angle shot, slightly off-center mug with steam subtly rising. Focus on the mug's texture. Wooden counter and scattered leaves in blurred background, creating a sense of depth and balance.\"\n}\n```"
+}

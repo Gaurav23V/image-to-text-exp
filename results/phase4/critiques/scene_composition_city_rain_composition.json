@@ -1,0 +1,6 @@
+{
+  "issues": "The image lacks a strong focal point and feels overly wide. Pedestrians are lost in the frame, and the composition feels unbalanced. Negative space is minimal.",
+  "corrected_prompt": "Cinematic, low-angle shot. Focus on a central, illuminated storefront. Tight framing, leading lines to a distant neon sign, balanced composition with a small group of pedestrians.",
+  "confidence": 0.9,
+  "raw_response": "```json\n{\n  \"issues\": \"The image lacks a strong focal point and feels overly wide. Pedestrians are lost in the frame, and the composition feels unbalanced. Negative space is minimal.\",\n  \"corrected_prompt\": \"Cinematic, low-angle shot. Focus on a central, illuminated storefront. Tight framing, leading lines to a distant neon sign, balanced composition with a small group of pedestrians.\" ,\n  \"confidence\": 0.9\n}\n```"
+}

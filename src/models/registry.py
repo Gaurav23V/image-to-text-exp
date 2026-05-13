@@ -92,6 +92,15 @@ MODEL_REGISTRY: dict[str, ModelSpec] = {
         requires_manual_setup=True,
         notes="Official repository indicates heavyweight hardware and manual download/setup steps.",
     ),
+    "sd15": ModelSpec(
+        alias="sd15",
+        model_id="runwayml/stable-diffusion-v1-5",
+        source="huggingface",
+        description="Stable Diffusion 1.5 — supports CFG, negative prompts, and batch generation.",
+        family="stable-diffusion",
+        adapter="diffusers",
+        recommended_steps=20,
+    ),
     "mock_generator": ModelSpec(
         alias="mock_generator",
         model_id="mock://text-to-image",

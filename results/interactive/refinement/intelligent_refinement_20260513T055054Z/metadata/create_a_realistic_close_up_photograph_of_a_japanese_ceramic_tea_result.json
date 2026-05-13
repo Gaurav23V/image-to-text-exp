@@ -1,0 +1,87 @@
+{
+  "run_id": "intelligent_refinement_20260513T055054Z",
+  "timestamp": "2026-05-13T05:50:54.346296Z",
+  "model_alias": "sd15",
+  "seed": 42,
+  "original_prompt": "Create a realistic close-up photograph of a Japanese ceramic tea mug, shot with a 50 mm lens to achieve a shallow depth of field and highlight intricate design details and a textured surface. Steam rises from the top, tea leaves are scattered on a wooden counter and the background is softly out of focus.",
+  "negative_prompt": "blurry, distorted, cluttered, wide angle, plastic, people, bright light, oversaturated, low detail",
+  "winner_critic": "detail",
+  "winner_seed_offset": 0,
+  "winner_prompt": "detail",
+  "winner_image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/winner/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea.png",
+  "winner_clip_score": 0.368443101644516,
+  "baseline_image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/baseline/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea.png",
+  "baseline_clip_score": 0.2951905429363251,
+  "clip_score_delta": 0.07325255870819092,
+  "total_runtime_seconds": 236.65108979199977,
+  "critic_results": [
+    {
+      "critic": "composition",
+      "refined_prompt": "Low angle shot, slightly off-center mug with steam subtly rising. Focus on the mug's texture. Wooden counter and scattered leaves in blurred background, creating a sense of depth and balance.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.3075272738933563,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_composition_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.3412787914276123,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_composition_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.3578363358974457,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_composition_2.png"
+        }
+      ],
+      "best_clip_score": 0.3578363358974457
+    },
+    {
+      "critic": "detail",
+      "refined_prompt": "Realistic close-up of a Japanese ceramic tea mug. Focus on detailed texture and surface. Add rising steam and scattered tea leaves. Soft, blurred wooden background.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.368443101644516,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_detail_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.2952671945095062,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_detail_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.289156436920166,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_detail_2.png"
+        }
+      ],
+      "best_clip_score": 0.368443101644516
+    },
+    {
+      "critic": "style",
+      "refined_prompt": "Cinematic close-up of a Japanese tea mug. Soft, diffused natural light. Shallow depth of field, focusing on the ceramic texture. Subtle steam, scattered tea leaves. Warm, inviting color palette.  Wooden counter subtly blurred.",
+      "candidates": [
+        {
+          "seed_offset": 0,
+          "clip_score": 0.2745412588119507,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_style_0.png"
+        },
+        {
+          "seed_offset": 1,
+          "clip_score": 0.32032260298728943,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_style_1.png"
+        },
+        {
+          "seed_offset": 2,
+          "clip_score": 0.2741334140300751,
+          "image_path": "results/interactive/refinement/intelligent_refinement_20260513T055054Z/candidates/create_a_realistic_close_up_photograph_of_a_japanese_ceramic_tea_style_2.png"
+        }
+      ],
+      "best_clip_score": 0.32032260298728943
+    }
+  ],
+  "success": true,
+  "error": null
+}

@@ -1,0 +1,9 @@
+{
+  "alignment_issues": [],
+  "missing_details": [],
+  "style_issues": [],
+  "corrected_prompt": "A watercolor fox reading a book in a cozy library, with bookshelves visible in the background, a medium shot, eye-level camera angle, balanced composition with ample negative space.",
+  "confidence": 5.0,
+  "notes": "",
+  "raw_response": "```json\n{\n  \"issues\": [\n    {\n      \"element\": \"fox\",\n      \"description\": \"The fox is positioned too centrally and fills almost the entire frame, leaving little room for context or visual interest. Its placement feels cramped.\"\n    },\n    {\n      \"element\": \"library/bookshelves\",\n      \"description\": \"The bookshelves are cropped very tightly and appear as a flat backdrop. There's no sense of depth or perspective, making the library feel like a mere suggestion rather than a tangible space.\"\n    },\n    {\n      \"element\": \"book\",\n      \"description\": \"The book is held very close to the fox's face, obscuring a significant portion of its body and the book itself. This close-up framing limits the visual information and feels somewhat claustrophobic.\"\n    },\n    {\n      \"element\": \"overall composition\",\n      \"description\": \"The composition is very tight and lacks negative space. This creates a sense of being overwhelmed by the subject and the immediate surroundings, rather than a balanced and inviting scene.\"\n    },\n    {\n      \"element\": \"framing\",\n      \"description\": \"The framing is a tight, head-on shot. A slightly wider shot or a different camera angle could provide more context and a better sense of the library environment.\"\n    }\n  ],\n  \"corrected_prompt\": \"A watercolor fox reading a book in a cozy library, with bookshelves visible in the background, a medium shot, eye-level camera angle, balanced composition with ample negative space.\",\n  \"confidence\": 5\n}\n```"
+}

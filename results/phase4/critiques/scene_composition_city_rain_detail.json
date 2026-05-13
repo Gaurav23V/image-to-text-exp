@@ -1,0 +1,8 @@
+{
+  "issues": [
+    "Missing pedestrians, incorrect number of reflections, dull neon colors, lack of cinematic wide shot composition."
+  ],
+  "corrected_prompt": "Rainy neon city street, many pedestrians with umbrellas, vibrant reflections on wet asphalt, cinematic wide shot, high detail.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"Missing pedestrians, incorrect number of reflections, dull neon colors, lack of cinematic wide shot composition.\"\n  ],\n  \"corrected_prompt\": \"Rainy neon city street, many pedestrians with umbrellas, vibrant reflections on wet asphalt, cinematic wide shot, high detail.\"\n}\n```"
+}

@@ -1,0 +1,10 @@
+{
+  "issues": [
+    "Overly staged, artificial steam.  Lack of natural light and depth.  The wooden counter is distracting and poorly rendered.  The overall mood is flat and lacks warmth.",
+    "Depth of field is not effectively utilized.  The focus is too central and doesn't draw the eye to the details.",
+    "The color palette is muted and lacks vibrancy.  The texture of the ceramic is not convincingly rendered."
+  ],
+  "corrected_prompt": "Cinematic close-up of a Japanese tea mug. Soft, diffused natural light. Shallow depth of field, focusing on the ceramic texture. Subtle steam, scattered tea leaves. Warm, inviting color palette.  Wooden counter subtly blurred.",
+  "confidence": 0.95,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"Overly staged, artificial steam.  Lack of natural light and depth.  The wooden counter is distracting and poorly rendered.  The overall mood is flat and lacks warmth.\",\n    \"Depth of field is not effectively utilized.  The focus is too central and doesn't draw the eye to the details.\",\n    \"The color palette is muted and lacks vibrancy.  The texture of the ceramic is not convincingly rendered.\"\n  ],\n  \"corrected_prompt\": \"Cinematic close-up of a Japanese tea mug. Soft, diffused natural light. Shallow depth of field, focusing on the ceramic texture. Subtle steam, scattered tea leaves. Warm, inviting color palette.  Wooden counter subtly blurred.\",\n  \"confidence\": 0.95\n}\n```"
+}

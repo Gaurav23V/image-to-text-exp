@@ -80,6 +80,23 @@ class SuperResolutionConfig(BaseModel):
         return value
 
 
+class RefinementConfig(BaseModel):
+    n_candidates: int = 5
+    critics: list[str] = Field(default_factory=lambda: ["composition", "detail", "style"])
+    generate_negative: bool = True
+    gemini_mode: Literal["mock", "live", "ollama"] = "live"
+    gemini_model: str = "gemini-2.5-flash"
+
+    @field_validator("n_candidates")
+    @classmethod
+    def validate_candidates(cls, value: int) -> int:
+        if value < 1:
+            raise ValueError("n_candidates must be >= 1")
+        if value > 20:
+            raise ValueError("n_candidates must be <= 20")
+        return value
+
+
 class AppConfig(BaseModel):
     run: RunConfig
     models: list[str]
@@ -87,6 +104,7 @@ class AppConfig(BaseModel):
     reporting: ReportingConfig
     feedback: FeedbackConfig
     super_resolution: SuperResolutionConfig
+    refinement: RefinementConfig = Field(default_factory=RefinementConfig)
 
     @field_validator("models")
     @classmethod

@@ -1,0 +1,9 @@
+{
+  "issues": [
+    "The image lacks detail regarding the mug's material and texture. The croissant is on a plain white plate, not a plate with a design. The newspaper is crumpled and the flowers are a single color, not a variety.",
+    "The sunlight is not prominent."
+  ],
+  "corrected_prompt": "A rustic wooden breakfast table. A textured, cobalt blue ceramic mug. A flaky croissant on a white plate with a subtle floral pattern. A crumpled newspaper and a vase with vibrant yellow roses, morning sunlight streaming in.",
+  "confidence": 0.5,
+  "raw_response": "```json\n{\n  \"issues\": [\n    \"The image lacks detail regarding the mug's material and texture. The croissant is on a plain white plate, not a plate with a design. The newspaper is crumpled and the flowers are a single color, not a variety.\",\n    \"The sunlight is not prominent.\"\n  ],\n  \"corrected_prompt\": \"A rustic wooden breakfast table. A textured, cobalt blue ceramic mug. A flaky croissant on a white plate with a subtle floral pattern. A crumpled newspaper and a vase with vibrant yellow roses, morning sunlight streaming in.\"\n}\n```"
+}

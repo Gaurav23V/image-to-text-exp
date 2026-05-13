@@ -8,4 +8,4 @@
 
              clip_score  runtime_seconds
 model_alias                             
-sd_turbo          0.336           1.4802
+sd_turbo          0.336           1.4675

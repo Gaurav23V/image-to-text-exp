@@ -1,0 +1,6 @@
+{
+  "issues": "The chair is centered, creating a static and unbalanced composition. Negative space is minimal. A slightly elevated, angled perspective would improve depth and visual interest.",
+  "corrected_prompt": "Studio product shot: bright red chair, 45-degree angle, slightly elevated, with ample negative space around the chair for a dynamic composition.",
+  "confidence": 0.95,
+  "raw_response": "```json\n{\n  \"issues\": \"The chair is centered, creating a static and unbalanced composition. Negative space is minimal. A slightly elevated, angled perspective would improve depth and visual interest.\",\n  \"corrected_prompt\": \"Studio product shot: bright red chair, 45-degree angle, slightly elevated, with ample negative space around the chair for a dynamic composition.\",\n  \"confidence\": 0.95\n}\n```"
+}
